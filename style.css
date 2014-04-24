@@ -143,10 +143,18 @@ body {
   font-family: Helvetica, sans-serif;
   padding: 2%; }
 
-.repoCase h4 {
-  width: 25%;
+.box {
+  width: 30%;
   display: inline-block;
-  text-transform: uppercase;
   text-align: center;
   vertical-align: top;
   padding: 2%; }
+
+.box h4 {
+  text-transform: uppercase; }
+
+.box a {
+  text-decoration: none;
+  color: #333333; }
+  .box a:hover {
+    color: #7acef4; }
