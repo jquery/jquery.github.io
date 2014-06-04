@@ -47,5 +47,4 @@ gi.addHtml = function(data){
 
 $(function(){
    gi.init();
-
-}); //doc ready 
+});
