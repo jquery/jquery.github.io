@@ -15,16 +15,19 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
       jQuery Branding Guidelines
  ===================================*/
 
- /* Colours
+ /*
+Here are jQuery's brand colours and fonts. 
+Commented here for transition to rework.
+
+Colours
  $primBlue: #0769AD;
  $secBlue: #7acef4;
  $black: #333333;
 
 Fonts 
-
 $bodyType: Helvetica, sans-serif;
 $headlines: 'Klavika', sans-serif;
-
+*/
 
 
  /*====================================
