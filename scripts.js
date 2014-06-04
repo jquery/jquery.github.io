@@ -1,8 +1,6 @@
 var gi = {};
 
 gi.init = function() {
-	console.log("yo yo");
-	gi.getOrg();
 	gi.getRepos();
 	
 
