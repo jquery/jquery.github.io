@@ -40,27 +40,22 @@ $headlines: 'Klavika', sans-serif;
  	font-family: Helvetica, sans-serif;
  	padding: 2%;
  }
-
  .box {
  	width: 30%;
  	display: inline-block;
- 	text-align: center;
  	vertical-align: top;
  	padding: 2%;
  }
-
  .box h4 {
  	text-transform: uppercase;
  }
-
  .box a {
  	text-decoration: none;
  	color: #333333;
  }
-
 .box a:hover {
- 		color: #7acef4;
- 	}
+ 	color: #7acef4;
+ }
 
 
 
