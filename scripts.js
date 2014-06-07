@@ -2,7 +2,8 @@ var gi = {};
 gi.markup = "<div class='box'><h4><a href='${link}'>${name}</a></h4><p>${description}</p><p>Forked: ${forks}  times</p><p>Open Issues: ${issues}</p><p>Language: ${language}</p><p>Watchers: ${watchers}</p><p>Since ${date}</p><a href='${website}'>${website}</a></div>";	
 
 gi.init = function() {
-	gi.getRepos();
+	$.template( "reposTemplate", gi.markup);
+	gi.getRepos();	
 };	
 
 gi.getRepos = function(){
