@@ -62,6 +62,9 @@
 
                 $( "body" ).append( repoList );
             }
+        },
+        error: function() {
+            $( "body" ).append( '<p class="text-center">Error loading data. Please try again later.</p>' );
         }
     });
 </script>
