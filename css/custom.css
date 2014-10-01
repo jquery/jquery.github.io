@@ -1,0 +1,68 @@
+body {
+	background-color: #0769AD;
+}
+
+.header {
+	padding-top: 3em;
+	padding-bottom: 1em;
+	margin-bottom: 2em;
+}
+
+.header .columns {
+	min-height: 0;
+}
+
+.columns, .repo-panel {
+	min-height: 9em;
+}
+
+.panel {
+	background-color: #FAFAFA;
+	border-color: #333;
+}
+
+.panel h4 {
+	color: #7ACEF4;
+}
+
+.panel p {
+	color: #777;
+}
+
+.language-panel {
+	background-color: #333;
+	color: #FFF;
+	padding: 0.2em;
+	font-size: 75%;
+	position: absolute;
+	bottom: 0.7em;
+	right: 3em;
+}
+
+.project-logo {
+	width: 50px;
+	height: 30px;
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+
+.jquery-logo {
+	background: url("../img/icons.png") -6px 0;
+}
+
+.jquery-ui-logo {
+	background: url("../img/icons.png") -56px 0;
+}
+
+.jquery-mobile-logo {
+	background: url("../img/icons.png") -106px 0;
+}
+
+.sizzle-logo {
+	background: url("../img/icons.png") -156px 0;
+}
+
+.qunit-logo {
+	background: url("../img/icons.png") -206px 0;
+}
