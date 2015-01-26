@@ -39,13 +39,11 @@
 </script>
 
 <script>
-    var repoTemplate = Handlebars.compile( $( "#repo-template" ).html() );
-
-    $.ajax({
-        dataType: "json",
-        url: "https://api.github.com/orgs/jquery/repos?access_token=1dd2293c7f8644ab21214393bc9bce987747a11e",
-        success: function( repos ) {
-            var repoList, index;
+    var repoTemplate = Handlebars.compile( $( "#repo-template" ).html() ),
+        successHandler = function( response ) {
+            var repoList, index,
+                repos = response.data,
+                links = response.meta.Link || [];
 
             for ( index = 0; index < repos.length; index += 3 ) {
                 repoList = repoTemplate({
@@ -62,11 +60,26 @@
 
                 $( "body" ).append( repoList );
             }
+
+            for ( index = 0; index < links.length; index++ ) {
+                if( links[ index ][ 1 ].rel == "next" ) {
+                    getRepos( links[ index ][ 0 ] );
+                    index = links.length;
+                }
+            }
         },
-        error: function() {
-            $( "body" ).append( "<p class='text-center'>Error loading data. Please try again later.</p>" );
-        }
-    });
+        getRepos = function( url ) {
+            $.ajax({
+                dataType: "jsonp",
+                url: url,
+                success: successHandler,
+                error: function() {
+                    $( "body" ).append( "<p class='text-center'>Error loading data. Please try again later.</p>" );
+                }
+            });
+        };
+
+    getRepos( "https://api.github.com/orgs/jquery/repos?access_token=1dd2293c7f8644ab21214393bc9bce987747a11e" );
 </script>
 
 </body>
