@@ -1,86 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery Foundation on GitHub</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
-
-<div class="row header">
-    <div class="text-center small-12 small-centered columns">
-        <h1><img src="img/foundation.png"></h1>
-    </div>
-</div>
-
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/handlebars-v2.0.0.js"></script>
-
-<script id="repo-template" type="text/x-handlebars-template">
-    <div class="row">
-        {{#each repos}}
-        <div class="large-4 large-uncentered small-centered columns">
-            <a href="{{this.html_url}}" target="_blank">
-                <div class="panel repo-panel">
-                    <span class="project-logo {{this.name}}-logo"></span>
-                    <h4>{{this.name}}</h4>
-                    <p>{{this.description}}</p>
-                    {{#if this.language}}
-                    <span class="panel language-panel right">{{this.language}}</span>
-                    {{/if}}
-                </div>
-            </a>
-        </div>
-        {{/each}}
-    </div>
-</script>
-
-<script>
-    var repoTemplate = Handlebars.compile( $( "#repo-template" ).html() ),
-        successHandler = function( response ) {
-            var repoList, index,
-                repos = response.data,
-                links = response.meta.Link || [];
-
-            for ( index = 0; index < repos.length; index += 3 ) {
-                repoList = repoTemplate({
-                    repos: repos.slice( index, index + 3 )
-                });
-
-                $( "body" ).append( repoList );
-            }
-
-            if ( index < repos.length - 1 ) {
-                repoList = repoTemplate({
-                    repos: repos.slice( index )
-                });
-
-                $( "body" ).append( repoList );
-            }
-
-            for ( index = 0; index < links.length; index++ ) {
-                if( links[ index ][ 1 ].rel == "next" ) {
-                    getRepos( links[ index ][ 0 ] );
-                    index = links.length;
-                }
-            }
-        },
-        getRepos = function( url ) {
-            $.ajax({
-                dataType: "jsonp",
-                url: url,
-                success: successHandler,
-                error: function() {
-                    $( "body" ).append( "<p class='text-center'>Error loading data. Please try again later.</p>" );
-                }
-            });
-        };
-
-    getRepos( "https://api.github.com/orgs/jquery/repos?access_token=1dd2293c7f8644ab21214393bc9bce987747a11e" );
-</script>
-
-</body>
+<!DOCTYPE html>
+<html lang="en-US">
+  <meta charset="utf-8">
+  <title>Redirecting</title>
+  <link rel="canonical" href="https://github.com/jquery/">
+  <meta http-equiv="refresh" content="0; url=https://github.com/jquery/">
+  <meta name="robots" content="noindex">
+  <h1>Redirecting</h1>
+  Moved to <a href="https://github.com/jquery/">https://github.com/jquery/</a>
 </html>
